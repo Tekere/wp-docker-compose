@@ -6,7 +6,7 @@ services:
      volumes:
        - ./db/mysql:/var/lib/mysql
      ports:
-       - "3306:3306"
+       - "3306-3385:3306"
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: wordpress
@@ -23,7 +23,7 @@ services:
       - ./wordpress/:/var/www/html
       - ./php/php.ini:/usr/local/etc/php/conf.d/php.ini
      ports:
-       - "8000-8080:80"
+       - "8000-8079:80"
      restart: always
      environment:
        WORDPRESS_DB_HOST: db:3306
